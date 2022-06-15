@@ -12,7 +12,9 @@
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
-
+a {
+  text-decoration: none !important;
+}
 html {
   font-size: 62.5%;
   overflow-x: hidden;
@@ -798,4 +800,58 @@ section {
   .banner .content h3 {
     font-size: 2.7rem;
   }
+}
+
+
+.journey {
+  color: white;
+}
+
+
+
+.partner-content{
+  color:white;
+  font-size: 1.7rem;
+  padding: 25px 0 0 0;
+}
+.partner-content h2{
+  color:red;
+
+}
+.partner-content p{
+  color:white;
+  padding: 10px 0 10px 0;
+}
+
+.partner{
+  color: white;
+  font-size: 1.7rem;
+  background-color: #222222;
+  border-radius: 7px;
+  padding: 15px;
+}
+.partner input,
+.partner textarea{
+  padding: 10px;
+  font-size: 1.2rem;
+}
+.partner h1{
+  margin-bottom: 30px;
+  position: relative;
+}
+.partner h1::after{
+  background: white;
+  bottom: -17px;
+  content: "";
+  display: block;
+  left: 0;
+  height: 3px;
+  position: absolute;
+  width: 80px;
+}
+.blogs .content span{
+  color: white;
+  display: block;
+  font-size: 1.2rem;
+  color: #aeaeae;
 }

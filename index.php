@@ -1,7 +1,7 @@
 <?php
     $pageName ='Saudi Plan';
-    include('includes/header.php');  
     $mainSection = 'Saudi Plan';
+    include('includes/header.php');  
     include('includes/home.php'); 
     include('admin/connect_package.php');  
     include('admin/connect_blog.php'); 

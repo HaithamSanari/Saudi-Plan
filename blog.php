@@ -1,7 +1,7 @@
 <?php
   $pageName ='Blog';
-  include('includes/header.php');  
   $mainSection = 'Blog';
+  include('includes/header.php');  
   include('includes/home.php');
   include('admin/connect_blog.php'); 
   ?>
@@ -17,6 +17,7 @@
     <?php
       $query = mysqli_query($conn, "SELECT * FROM blog_post ORDER BY id DESC")
       ?>
+      <!-- fetch blog posts -->
     <?php foreach($query as $q){?>
     <div class="box" data-aos="fade-up" data-aos-delay="150">
       <div class="image">

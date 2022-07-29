@@ -1,7 +1,7 @@
 <?php
   $pageName ='Packages';
-  include('includes/header.php');  
   $mainSection = 'Packages';
+  include('includes/header.php');  
   include('includes/home.php'); 
   include('admin/connect_package.php');   
 ?>
@@ -13,6 +13,7 @@
   </div>
   <div class="box-container">
 
+    <!-- fetch package information -->
     <?php
         $query = mysqli_query($conn, "SELECT * FROM package_post ORDER BY id DESC")
     ?>

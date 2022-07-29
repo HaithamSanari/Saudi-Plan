@@ -6,7 +6,6 @@ include('includes/header.php');
 include('includes/navbar.php'); 
 ?>
 
-
 <div class="card-body">
   <div class="container-fluid">
     <div class="card shadow mb-4">
@@ -15,6 +14,7 @@ include('includes/navbar.php');
         </h5>
       </div>
       <div class="py-3">
+        <!-- fetch and update partner register content -->
         <?php foreach($query as $q){ ?>
         <form method="post">
           <input type="text" hidden value='<?php echo $q['id']?>' name="id">

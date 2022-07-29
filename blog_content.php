@@ -6,7 +6,7 @@
 
 <div class="blog-content" id="blog-content">
 
-
+  <!-- fetch blog content -->
   <?php foreach($query as $q){?>
   <div class="blog_header">
     <div class="blog_banner">
@@ -24,7 +24,6 @@
     <p><?php echo $q["post_content"]?></p>
     <?php }?>
   </div>
-
 
 </div>
 

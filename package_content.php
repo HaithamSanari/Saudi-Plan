@@ -4,7 +4,9 @@
   include('admin/connect_req_package.php'); 
   include('admin/connect_package.php'); 
 ?>
+
 <section class="package-content">
+  <!-- fetch package information -->
   <?php foreach($query as $q){?>
   <div class="box-container">
     <div class="package-header">
@@ -100,6 +102,7 @@
         </div>
       </div>
       <!-- Form Controls -->
+      <!-- user request package form -->
       <form class="row g-4 partner" action="admin/connect_req_package.php" method="POST">
         <div>
           <h1>Select Data / Time & Number of Guest</h1>
@@ -136,7 +139,7 @@
             name="inputArrival" />
         </div>
         <div class="col-12 mb-3">
-          <button id="submit" type="submit" class="btn" name="packageRequest">Submit</button>
+          <button id="submit" type="submit" name="submit" class="btn">Submit</button>
           <span id="error_message" class="text-danger"></span>
           <span id="success_message" class="text-success"></span>
         </div>
@@ -145,10 +148,13 @@
     <?php }?>
   </div>
 </section>
+
 <script>
   $(document).ready(function () {
+    // form validation 
     $('#submit').click(function (e) {
       e.preventDefault();
+      let submit = $('#submit').val();
       let firstName = $('#firstName').val();
       let lastName = $('#lastName').val();
       let inputEmail = $('#inputEmail').val();
@@ -184,7 +190,8 @@
             inputPhone: inputPhone,
             inputNumberOfGuests: inputNumberOfGuests,
             title: title,
-            inputArrival: inputArrival
+            inputArrival: inputArrival,
+            submit: submit
           },
           success: function (data) {
             $("form").trigger("reset");
@@ -198,6 +205,7 @@
     });
   });
 </script>
+
 <?php
     include('includes/scripts.php');
     include('includes/footer.php');  

@@ -6,7 +6,6 @@ include('includes/header.php');
 include('includes/navbar.php'); 
 ?>
 
-
 <div class="card-body">
   <div class="container-fluid">
     <div class="card shadow mb-4">
@@ -15,7 +14,7 @@ include('includes/navbar.php');
         </h5>
       </div>
       <div class="py-3">
-        <!-- enctype="multipart/form-data" -->
+        <!-- fetch and update blog content -->
         <?php foreach($query as $q){ ?>
         <form action="connect_blog.php" method="POST" enctype="multipart/form-data">
           <input type="text" hidden value='<?php echo $q['id']?>' name="id">
@@ -65,8 +64,6 @@ include('includes/navbar.php');
     </div>
   </div>
 </div>
-
-
 
 <?php
 include('includes/scripts.php');

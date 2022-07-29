@@ -5,7 +5,6 @@ include('includes/header.php');
 include('includes/navbar.php'); 
 ?>
 
-
 <div class="card-body">
   <div class="container-fluid">
     <div class="card shadow mb-4">
@@ -14,7 +13,7 @@ include('includes/navbar.php');
         </h5>
       </div>
       <div class="py-3">
-        <!-- enctype="multipart/form-data" -->
+        <!-- create a new blog post-->
         <form action="connect_blog.php" method="POST" enctype="multipart/form-data">
           <div class="form-group">
             <div class="col-md-12">
@@ -56,8 +55,6 @@ include('includes/navbar.php');
     </div>
   </div>
 </div>
-
-
 
 <?php
 include('includes/scripts.php');

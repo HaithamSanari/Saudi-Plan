@@ -20,6 +20,7 @@ include('includes/header.php');
   </div>
   <!-- /.container-fluid -->
 </section>
+
 <?php
 include('includes/scripts.php');
 include('includes/footer.php');

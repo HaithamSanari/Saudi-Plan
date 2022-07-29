@@ -1,24 +1,20 @@
 <?php 
 
 // Database connection
-$conn = mysqli_connect("localhost", "root", "", "saudiplan");  
-if(!$conn){
-  header("Location:../errors/dberror.php");
-  die();
-}
+include('config/dbcon.php');
 
 // Get data to display on index page
 $sql = "SELECT * FROM plan_journey_reg";
 $query = mysqli_query($conn, $sql);
 
-// Get post data based on id
+// Get Journey data based on id
 if(isset($_REQUEST['id'])){
   $id = $_REQUEST['id'];
   $sql = "SELECT * FROM plan_journey_reg WHERE id = $id";
   $query = mysqli_query($conn, $sql);
 }
 
-// Delete a post
+// Delete a Journey
 if(isset($_REQUEST['delete'])){
   $id = $_REQUEST['id'];
   
@@ -34,7 +30,8 @@ if(isset($_REQUEST['delete'])){
   mysqli_close($conn);
   
 }
-// Update a post
+
+// Update a Journey
 if(isset($_REQUEST['update'])){
   $id = $_REQUEST['id'];
 
@@ -68,22 +65,21 @@ if(mysqli_query($conn, $sql)){
 
 <?php 
 
-
-$conn = mysqli_connect("localhost", "root", "", "saudiplan");  
-if(isset($_REQUEST["firstName"]))  
+// receive a new user Journey information
+if(isset($_REQUEST["submit"]))  
 {  
-  $firstName = mysqli_real_escape_string($conn, $_REQUEST["firstName"]);  
-  $lastName = mysqli_real_escape_string($conn, $_REQUEST["lastName"]);  
+  $firstName = $_REQUEST["firstName"];  
+  $lastName = $_REQUEST["lastName"];  
 
-  $inputEmail = mysqli_real_escape_string($conn, $_REQUEST["inputEmail"]);  
-  $inputPhone = mysqli_real_escape_string($conn, $_REQUEST["inputPhone"]); 
+  $inputEmail = $_REQUEST["inputEmail"];  
+  $inputPhone = $_REQUEST["inputPhone"]; 
 
-  $inputArrival = mysqli_real_escape_string($conn, $_REQUEST["inputArrival"]);  
-  $inputDeparture = mysqli_real_escape_string($conn, $_REQUEST["inputDeparture"]); 
+  $inputArrival = $_REQUEST["inputArrival"];  
+  $inputDeparture = $_REQUEST["inputDeparture"]; 
 
-  $inputCity = mysqli_real_escape_string($conn, $_REQUEST["inputCity"]);  
-  $inputNumberOfGuests = mysqli_real_escape_string($conn, $_REQUEST["inputNumberOfGuests"]);  
-  $message = mysqli_real_escape_string($conn, $_REQUEST["message"]);  
+  $inputCity = $_REQUEST["inputCity"];  
+  $inputNumberOfGuests = $_REQUEST["inputNumberOfGuests"];  
+  $message = $_REQUEST["message"];  
 
   if($conn->connect_error){
     die('Connection Failed:' .$conn->connect_error);
@@ -97,6 +93,5 @@ if(isset($_REQUEST["firstName"]))
     $conn->close();
   }
 } 
-
 
 ?>

@@ -13,7 +13,7 @@ include('includes/navbar.php');
         </h5>
       </div>
       <div class="py-3">
-        
+        <!-- create a new package -->
         <form action="connect_package.php" method="POST" enctype="multipart/form-data">
           <div class="form-group">
             <div class="col-md-12">

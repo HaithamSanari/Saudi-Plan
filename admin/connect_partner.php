@@ -1,24 +1,20 @@
 <?php 
 
 // Database connection
-$conn = mysqli_connect("localhost", "root", "", "saudiplan");  
-if(!$conn){
-  header("Location:../errors/dberror.php");
-  die();
-}
+include('config/dbcon.php');
 
 // Get data to display on index page
 $sql = "SELECT * FROM partner_reg";
 $query = mysqli_query($conn, $sql);
 
-// Get post data based on id
+// Get Partner data based on id
 if(isset($_REQUEST['id'])){
   $id = $_REQUEST['id'];
   $sql = "SELECT * FROM partner_reg WHERE id = $id";
   $query = mysqli_query($conn, $sql);
 }
 
-// Delete a post
+// Delete a Partner
 if(isset($_REQUEST['delete'])){
   $id = $_REQUEST['id'];
   
@@ -35,7 +31,7 @@ if(isset($_REQUEST['delete'])){
   
 }
 
-// Update a post
+// Update a Partner
 if(isset($_REQUEST['update'])){
   $id = $_REQUEST['id'];
 
@@ -68,8 +64,8 @@ if(mysqli_query($conn, $sql)){
 
 <?php 
 
-// $conn = mysqli_connect("localhost", "root", "", "saudiplan");  
-if(isset($_REQUEST["firstName"]))  
+// receive a new partner information
+if(isset($_REQUEST["submit"]))  
 {  
     $firstName = mysqli_real_escape_string($conn, $_REQUEST["firstName"]);  
     $lastName = mysqli_real_escape_string($conn, $_REQUEST["lastName"]);  

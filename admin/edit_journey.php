@@ -6,7 +6,6 @@ include('includes/header.php');
 include('includes/navbar.php'); 
 ?>
 
-
 <div class="card-body">
   <div class="container-fluid">
     <div class="card shadow mb-4">
@@ -15,6 +14,7 @@ include('includes/navbar.php');
         </h5>
       </div>
       <div class="py-3">
+        <!-- fetch and update journey content -->
         <?php foreach($query as $q){ ?>
         <form method="post">
           <input type="text" hidden value='<?php echo $q['id']?>' name="id">
@@ -69,9 +69,9 @@ include('includes/navbar.php');
           </div>
           <div class="form-group">
             <div class="col-md-12">
-              <h4 class="card-title">State</h4>
-              <input type="text" placeholder="Enter State" class="form-control form-control-line" name='inputState'
-                value="<?php echo $q["inputState"]?>">
+              <h4 class="card-title">inputNumberOfGuests</h4>
+              <input type="text" placeholder="Enter Number Of Guests" class="form-control form-control-line" name='inputNumberOfGuests'
+                value="<?php echo $q["inputNumberOfGuests"]?>">
             </div>
           </div>
           <div class="form-group">

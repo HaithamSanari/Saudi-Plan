@@ -25,6 +25,7 @@
     goal, for your experience to be booked and enjoyed by as many people as possible.</p>
 </div>
 
+<!-- partner register form -->
 <div data-aos="fade-left" data-aos-delay="450" class="d-flex justify-content-center align-items-center ">
   <form class="row g-3 container partner" action="admin/connect_partner.php" method="POST">
     <div>
@@ -42,8 +43,6 @@
       <label for="inputEmail" class="form-label">Email</label>
       <input type="text" pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
         class="form-control" placeholder="Enter your email address" id="inputEmail" name="inputEmail">
-      <!-- <input type="email" class="form-control" placeholder="Enter your email address" id="inputEmail" name="inputEmail"
-        required /> -->
     </div>
     <div class="col-md-6">
       <label for="inputPhone" class="form-label">Phone Number</label>
@@ -64,7 +63,7 @@
         name="message"></textarea>
     </div>
     <div class="col-12 mb-3">
-      <button id="submit" type="submit" name="submit" class="btn">Submit</button>
+      <button id="submit" type="submit" name="partnerRegister" class="btn">Submit</button>
       <span class="form-message"></span>
       <span id="error_message" class="text-danger"></span>
       <span id="success_message" class="text-success"></span>
@@ -72,11 +71,12 @@
   </form>
 </div>
 
-
 <script>
   $(document).ready(function () {
+    // form validation 
     $('#submit').click(function (e) {
       e.preventDefault();
+      let submit = $('#submit').val();
       let firstName = $('#firstName').val();
       let lastName = $('#lastName').val();
       let inputEmail = $('#inputEmail').val();
@@ -111,7 +111,8 @@
             inputPhone: inputPhone,
             businessName: businessName,
             inputCity: inputCity,
-            message: message
+            message: message,
+            submit: submit
           },
           rules: {
             inputEmail: {

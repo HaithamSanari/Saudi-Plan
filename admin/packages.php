@@ -4,24 +4,8 @@ include('config/dbcon.php');
 include('includes/header.php'); 
 include('includes/navbar.php'); 
 include('connect_package.php'); 
+include('includes/check_info.php');
 ?>
-
-<!-- Display any info -->
-<?php if(isset($_REQUEST['info'])){ ?>
-<?php if($_REQUEST['info'] == "added"){?>
-<div class="alert alert-success" role="alert">
-  Post has been added successfully
-</div>
-<?php }else if($_REQUEST['info'] == "updated"){?>
-<div class="alert alert-success" role="alert">
-  Post has been updated successfully
-</div>
-<?php }else if($_REQUEST['info'] == "deleted"){?>
-<div class="alert alert-danger" role="alert">
-  Post has been deleted successfully
-</div>
-<?php  }?>
-<?php  }?>
 
 <div class="container-fluid">
   <div class="card shadow mb-4">
@@ -48,7 +32,7 @@ include('connect_package.php');
             </tr>
           </thead>
           <tbody>
-
+            <!-- fetch package -->
             <?php 
                 $counter = 0;
                 foreach($query as $q){
@@ -88,7 +72,6 @@ include('connect_package.php');
     </div>
   </div>
 </div>
-
 
 <?php
 include('includes/scripts.php');

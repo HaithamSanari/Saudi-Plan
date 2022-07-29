@@ -1,11 +1,12 @@
 <?php
   $pageName ='Plan Your Journey';
-  include('includes/header.php');  
   $mainSection = 'Plan Your Journey';
+  include('includes/header.php');  
   include('includes/home.php');  
+  include('admin/connect_journey.php');  
 ?>
 
-
+<!-- user request journey form -->
 <div data-aos="fade-left" data-aos-delay="450"
   class="d-flex justify-content-center align-items-center   aos-init aos-animate">
   <form class="row g-3 container partner" action="admin/connect_journey.php" method="POST">
@@ -43,7 +44,8 @@
     </div>
     <div class="col-md-6">
       <label for="inputNumberOfGuests" class="form-label">Number of Attendees</label>
-      <input type="number" class="form-control" placeholder="Enter number of people" id="inputNumberOfGuests" name="inputNumberOfGuests">
+      <input type="number" class="form-control" placeholder="Enter number of people" id="inputNumberOfGuests"
+        name="inputNumberOfGuests">
     </div>
     <div class="mb-3">
       <label for="message" class="form-label">description</label>
@@ -57,10 +59,13 @@
     </div>
   </form>
 </div>
+
 <script>
   $(document).ready(function () {
+    // form validation 
     $('#submit').click(function (e) {
       e.preventDefault();
+      let submit = $('#submit').val();
       let firstName = $('#firstName').val();
       let lastName = $('#lastName').val();
       let inputEmail = $('#inputEmail').val();
@@ -100,7 +105,8 @@
             inputDeparture: inputDeparture,
             inputCity: inputCity,
             inputNumberOfGuests: inputNumberOfGuests,
-            message: message
+            message: message,
+            submit: submit
           },
           success: function (data) {
             $("form").trigger("reset");
@@ -114,6 +120,7 @@
     });
   });
 </script>
+
 <?php
   include('includes/scripts.php');
   include('includes/footer.php');  

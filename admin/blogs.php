@@ -4,24 +4,8 @@ include('connect_blog.php');
 include('config/dbcon.php'); 
 include('includes/header.php'); 
 include('includes/navbar.php');
+include('includes/check_info.php');
 ?>
-
-<!-- Display any info -->
-<?php if(isset($_REQUEST['info'])){ ?>
-<?php if($_REQUEST['info'] == "added"){?>
-<div class="alert alert-success" role="alert">
-  Post has been added successfully
-</div>
-<?php }else if($_REQUEST['info'] == "updated"){?>
-<div class="alert alert-success" role="alert">
-  Post has been updated successfully
-</div>
-<?php }else if($_REQUEST['info'] == "deleted"){?>
-<div class="alert alert-danger" role="alert">
-  Post has been deleted successfully
-</div>
-<?php  }?>
-<?php  }?>
 
 <div class="container-fluid">
   <div class="card shadow mb-4">
@@ -46,6 +30,7 @@ include('includes/navbar.php');
           </thead>
           <tbody>
 
+            <!-- fetch blog posts -->
             <?php 
                 $counter = 0;
                 foreach($query as $q){
@@ -84,7 +69,6 @@ include('includes/navbar.php');
     </div>
   </div>
 </div>
-
 
 <?php
 include('includes/scripts.php');

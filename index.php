@@ -1,44 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Saudi Plan</title>
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&family=Tenor+Sans&display=swap"
-    rel="stylesheet" />
-  <!-- bootstrap 5 -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <!-- font awesome cdn link  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-  <!-- custom css file link  -->
-  <link rel="stylesheet" href="css/style.css" />
-  <!-- aos library -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-  <!-- custom js file link  -->
-  <script src="js/script.js" defer></script>
-</head>
-
 <?php
+    $pageName ='Saudi Plan';
     include('includes/header.php');  
-    ?>
-<!-- home section starts  -->
-
-<section class="home" id="home">
-  <div class="content">
-    <!-- <span data-aos="fade-up" data-aos-delay="150">follow us</span> -->
-    <h3 data-aos="fade-up" data-aos-delay="300">Saudi Plan</h3>
-    <p data-aos="fade-up" data-aos-delay="450"></p>
-    <!-- <a data-aos="fade-up" data-aos-delay="600" href="#" class="btn">book now</a> -->
-  </div>
-</section>
-
-<!-- home section ends -->
-
+    $mainSection = 'Saudi Plan';
+    include('includes/home.php'); 
+    include('admin/connect_package.php');  
+    include('admin/connect_blog.php'); 
+?>
 <!-- about section starts  -->
 
 <section class="about" id="about">
@@ -52,13 +19,10 @@
   </div>
 
   <div class="content" data-aos="fade-left" data-aos-delay="600">
-    <span>why choose us?</span>
+    <span class="title"><?php echo $lang['homeTitles'] ?></span>
     <h3>Saudi Plan</h3>
-    <p>
-      will help you find the best travel and holiday deals in Saudi Arabia,
-      by providing multiple and different options in the best locations to
-      choose from. Save your savings by booking the best and cheapest travel
-      deals.
+    <p class="description">
+      <?php echo $lang['homeDescription'] ?>
     </p>
   </div>
 </section>
@@ -67,61 +31,52 @@
 <!-- destination section starts  -->
 
 <section class="destination" id="destination">
-  <div class="heading">
-    <span>destinations</span>
-  </div>
 
+  <div class="heading">
+    <span>destination</span>
+  </div>
   <div class="box-container">
+    <?php
+      $query = mysqli_query($conn, "SELECT * FROM package_post ORDER BY id DESC limit 4")
+    ?>
+
+    <?php foreach($query as $q){?>
     <div class="box" data-aos="fade-up" data-aos-delay="150">
       <div class="image">
-        <img src="images/des-1.jpg" alt="" />
+        <a href="package_content.php?id=<?php echo $q["id"]?>">
+          <img src="uploads/<?php echo $q["images"]?>" accept=".jpg, .jpeg, .png" alt=""
+            title="<?php echo $q["images"]?>" />
+        </a>
       </div>
-      <div class="content">
-        <h3>Riyadh</h3>
-        <p>text</p>
-        <a href="#">read more <i class="fas fa-angle-right"></i></a>
-      </div>
-    </div>
 
-    <div class="box" data-aos="fade-up" data-aos-delay="300">
-      <div class="image">
-        <img src="images/des-2.jpg" alt="" />
-      </div>
       <div class="content">
-        <h3>tours & travel</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-        <a href="#">read more <i class="fas fa-angle-right"></i></a>
+        <h3><?php echo $q["title"]?></h3>
+        <!-- <p></p> -->
+        <div class="content-info">
+          <div class="city">
+            <span class="material-symbols-outlined">location_on</span>
+            <span><?php echo $q["city"]?></span>
+          </div>
+          <div class="days">
+            <span class="material-symbols-outlined">sunny</span>
+            <span><?php echo $q["days"]?> days</span>
+          </div>
+          <div class="rating"><span class="material-symbols-outlined">star_half</span> 4.5</span></div>
+        </div>
+        <a href="package_content.php?id=<?php echo $q["id"]?>">View Details <i class="fas fa-angle-right"></i></a>
       </div>
     </div>
+    <?php }?>
 
-    <div class="box" data-aos="fade-up" data-aos-delay="450">
-      <div class="image">
-        <img src="images/des-3.jpg" alt="" />
-      </div>
-      <div class="content">
-        <h3>tours & travel</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-        <a href="#">read more <i class="fas fa-angle-right"></i></a>
-      </div>
-    </div>
-
-    <div class="box" data-aos="fade-up" data-aos-delay="550">
-      <div class="image">
-        <img src="images/des-4.jpg" alt="" />
-      </div>
-      <div class="content">
-        <h3>tours & travel</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-        <a href="#">read more <i class="fas fa-angle-right"></i></a>
-      </div>
-    </div>
   </div>
+
 </section>
+
 
 <!-- destination section ends -->
 <!-- services section starts  -->
 
-<section class="services" id="services">
+<section class="services" dir="ltr" id="services">
   <div class="heading">
     <span>services</span>
     <h1>countless expericences</h1>
@@ -139,7 +94,7 @@
     <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
       <i class="fas fa-hiking"></i>
       <h3>adventures</h3>
-      <p>Satisfied travelers!</p>
+      <p>The travelers have always had a satisfied note of the services provided by us.</p>
     </div>
 
     <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
@@ -154,7 +109,7 @@
 
 <!-- gallery section starts  -->
 
-<section class="gallery" id="gallery">
+<section class="gallery" dir="ltr" id="gallery">
   <div class="heading">
     <span>gallery</span>
     <h1>we record memories</h1>
@@ -163,44 +118,56 @@
   <div class="box-container">
     <div class="box" data-aos="zoom-in-up" data-aos-delay="150">
       <span>travel spot</span>
-      <h3>Riyadh</h3>
+      <h3>Riyadh - kingdom Tower</h3>
       <img src="images/gallery-img-1.jpg" alt="" />
     </div>
 
     <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
-      <img src="images/gallery-img-2.jpg" alt="" />
+      <span>travel spot</span>
+      <h3>AlUla - Hegra</h3>
+      <img src="images/blog-content-3.jpg" alt="" />
     </div>
 
     <div class="box" data-aos="zoom-in-up" data-aos-delay="450">
-      <img src="images/gallery-img-3.jpg" alt="" />
+      <span>travel spot</span>
+      <h3>AlUla - Hegra</h3>
+      <img src="images/blog-content-1.jpg" alt="" />
     </div>
 
     <div class="box" data-aos="zoom-in-up" data-aos-delay="150">
       <span>travel spot</span>
-      <h3>Mecca</h3>
+      <h3>Mecca - Al Haram</h3>
       <img src="images/gallery-img-4.jpg" alt="" />
     </div>
 
     <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
-      <img src="images/gallery-img-5.jpg" alt="" />
+      <span>travel spot</span>
+      <h3>Riyadh - edge of the world</h3>
+      <img src="images/blog-content-18.jpg" alt="" />
     </div>
 
     <div class="box" data-aos="zoom-in-up" data-aos-delay="450">
-      <img src="images/gallery-img-6.jpg" alt="" />
+      <span>travel spot</span>
+      <h3>Umluj - The Saudi Maldives</h3>
+      <img src="images/blog-content-6.jpg" alt="" />
     </div>
 
     <div class="box" data-aos="zoom-in-up" data-aos-delay="150">
       <span>travel spot</span>
-      <h3>jeddah</h3>
+      <h3>jeddah - Jeddah Season Festival</h3>
       <img src="images/gallery-img-7.jpg" alt="" />
     </div>
 
     <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
-      <img src="images/gallery-img-8.jpg" alt="" />
+      <span>travel spot</span>
+      <h3>jeddah - Alrahmah Mosque</h3>
+      <img src="images/blog-content-2.jpg" alt="" />
     </div>
 
     <div class="box" data-aos="zoom-in-up" data-aos-delay="450">
-      <img src="images/gallery-img-9.jpg" alt="" />
+      <span>travel spot</span>
+      <h3>jeddah - Al-Balad</h3>
+      <img src="images/blog-content-16.jpg" alt="" />
     </div>
   </div>
 </section>
@@ -217,7 +184,8 @@
 
   <div class="box-container" data-aos="fade-left" data-aos-delay="600">
     <div class="box">
-      <p>text3</p>
+      <p>It was really just an unforgettable adventure. I have never been as happy as I was
+        then. Every day was simply filled with emotions. Thank you </p>
       <div class="user">
         <img src="images/pic-1.jpg" alt="" />
         <div class="info">
@@ -227,7 +195,9 @@
       </div>
     </div>
     <div class="box">
-      <p>text1</p>
+      <p>The company was just excellent, excellent guides, completely unfamiliar people who became faithful companions,
+        and in the end - good friends.
+      </p>
       <div class="user">
         <img src="images/pic-2.jpg" alt="" />
         <div class="info">
@@ -237,7 +207,9 @@
       </div>
     </div>
     <div class="box">
-      <p>text2</p>
+      <p>We very much enjoyed the entire trip. It was full of memorable experiences
+        that ranged from unique sightseeing adventures to unbelievable local
+        cuisine</p>
       <div class="user">
         <img src="images/pic-3.jpg" alt="" />
         <div class="info">
@@ -247,7 +219,8 @@
       </div>
     </div>
     <div class="box">
-      <p>text4</p>
+      <p>If I could return the time when I was there, I would do it for sure. There are simply no
+        words ,you just need to see. Iam very grateful to this tour.</p>
       <div class="user">
         <img src="images/pic-4.jpg" alt="" />
         <div class="info">
@@ -266,63 +239,37 @@
 <section class="blogs" id="blogs">
   <div class="heading">
     <span>blogs & posts</span>
-    <h1>we untold stories</h1>
   </div>
-
   <div class="box-container">
+
+    <?php
+      $query = mysqli_query($conn, "SELECT * FROM blog_post ORDER BY id DESC limit 3")
+      ?>
+    <?php foreach($query as $q){?>
     <div class="box" data-aos="fade-up" data-aos-delay="150">
       <div class="image">
-        <img src="images/blog-1.jpg" alt="" />
+        <a href="blog_content.php?id=<?php echo $q["id"]?>">
+          <img src="uploads/<?php echo $q["post_image"]?>" accept=".jpg, .jpeg, .png" alt=""
+            title="<?php echo $q["post_image"]?>" />
+        </a>
       </div>
       <div class="content">
-        <a href="#" class="link">Life is a journey, not a destination</a>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur,
-          natus!
-        </p>
-        <div class="icon">
-          <a href="#"><i class="fas fa-clock"></i> 21st may, 2021</a>
-          <a href="#"><i class="fas fa-user"></i> by admin</a>
+        <span><?php echo $q["post_category"]?></span>
+        <a href="blog_content.php?id=<?php echo $q["id"]?>" class="link"><?php echo $q["post_title"]?></a>
+        <div class="content-box">
+          <div class="content-text">
+            <p><?php echo $q["post_description"]?></p>
+          </div>
+          <div class="icon">
+            <a href="#"><i class="fas fa-clock"></i> <?php echo date("F j, Y", strtotime($q["created"]))?></a>
+          </div>
         </div>
       </div>
     </div>
-
-    <div class="box" data-aos="fade-up" data-aos-delay="300">
-      <div class="image">
-        <img src="images/blog-2.jpg" alt="" />
-      </div>
-      <div class="content">
-        <a href="#" class="link">Life is a journey, not a destination</a>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur,
-          natus!
-        </p>
-        <div class="icon">
-          <a href="#"><i class="fas fa-clock"></i> 21st may, 2021</a>
-          <a href="#"><i class="fas fa-user"></i> by admin</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="box" data-aos="fade-up" data-aos-delay="450">
-      <div class="image">
-        <img src="images/blog-3.jpg" alt="" />
-      </div>
-      <div class="content">
-        <a href="#" class="link">Life is a journey, not a destination</a>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur,
-          natus!
-        </p>
-        <div class="icon">
-          <a href="#"><i class="fas fa-clock"></i> 21st may, 2021</a>
-          <a href="#"><i class="fas fa-user"></i> by admin</a>
-        </div>
-      </div>
-    </div>
+    <?php }?>
   </div>
-</section>
 
+</section>
 <!-- blogs section ends -->
 
 <!-- banner section starts  -->
@@ -331,11 +278,12 @@
   <div class="content" data-aos="zoom-in-up" data-aos-delay="300">
     <span>start your adventures</span>
     <h3>Let's Explore This World</h3>
-    <a href="index2.html" class="btn">book now</a>
+    <a href="package.php" class="btn">book now</a>
   </div>
 </div>
 
 <!-- banner section ends -->
 <?php
+    include('includes/scripts.php');
     include('includes/footer.php');  
 ?>

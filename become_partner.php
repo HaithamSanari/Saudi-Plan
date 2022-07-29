@@ -1,43 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Saudi Plan</title>
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&family=Tenor+Sans&display=swap"
-    rel="stylesheet" />
-  <!-- bootstrap 5 -->
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <!-- font awesome cdn link  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-  <!-- custom css file link  -->
-  <link rel="stylesheet" href="css/style.css" />
-  <!-- aos library -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-  <!-- custom js file link  -->
-  <script src="js/script.js" defer></script>
-</head>
 <?php
-  include('includes/header.php');  
+  $pageName ='Become Partner';
+  $mainSection = 'Our Partners';
+  include('includes/header.php');
+  include('includes/home.php'); 
+  include('admin/connect_partner.php');
 ?>
-<!-- home section starts  -->
 
-<section class="home" id="home">
-  <div class="content">
-    <!-- <span data-aos="fade-up" data-aos-delay="150">follow us</span> -->
-    <h3 data-aos="fade-up" data-aos-delay="300">Our Partners</h3>
-    <p data-aos="fade-up" data-aos-delay="450"></p>
-    <!-- <a data-aos="fade-up" data-aos-delay="600" href="#" class="btn">book now</a> -->
-  </div>
-</section>
-
-<!-- home section ends -->
-<div class="partner-content container ">
+<div class="partner-content container " data-aos="fade-right" data-aos-delay="350">
   <h2>Be our partner!</h2>
   <p>Now that we are expanding our business all over Saudi Arabia, it’s your chance to join our fast-growing business
     community!</p>
@@ -56,54 +25,113 @@
     goal, for your experience to be booked and enjoyed by as many people as possible.</p>
 </div>
 
-<div data-aos="fade-left" data-aos-delay="450"
-  class="d-flex justify-content-center align-items-center m-5 pt-5  aos-init aos-animate">
-  <form class="row g-3 container partner">
+<div data-aos="fade-left" data-aos-delay="450" class="d-flex justify-content-center align-items-center ">
+  <form class="row g-3 container partner" action="admin/connect_partner.php" method="POST">
     <div>
       <h1>Company Information</h1>
     </div>
     <div class="col-md-6">
       <label for="firstName" class="form-label">First Name</label>
-      <input type="text" class="form-control" placeholder="Enter your first name" required="" />
+      <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" name="firstName" />
     </div>
     <div class="col-md-6">
       <label for="lastName" class="form-label">Last Name</label>
-      <input type="text" class="form-control" placeholder="Enter your last name" required="" />
+      <input type="text" class="form-control" id="lastName" placeholder="Enter your last name" name="lastName" />
     </div>
     <div class="col-md-6">
-      <label for="inputEmail4" class="form-label">Email</label>
-      <input type="email" class="form-control" placeholder="Enter your email address" id="inputEmail4" required="" />
+      <label for="inputEmail" class="form-label">Email</label>
+      <input type="text" pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+        class="form-control" placeholder="Enter your email address" id="inputEmail" name="inputEmail">
+      <!-- <input type="email" class="form-control" placeholder="Enter your email address" id="inputEmail" name="inputEmail"
+        required /> -->
     </div>
     <div class="col-md-6">
-      <label for="inputPassword4" class="form-label">Phone Number</label>
-      <input type="tel" class="form-control" placeholder="Enter your phone number" id="inputPassword4" required="" />
+      <label for="inputPhone" class="form-label">Phone Number</label>
+      <input type="tel" class="form-control" placeholder="Enter your phone number" id="inputPhone" name="inputPhone" />
     </div>
     <div class="col-md-6">
-      <label for="inputEmail4" class="form-label">Business Name</label>
-      <input type="email" class="form-control" placeholder="Enter your email address" id="inputEmail4" required="" />
+      <label for="businessName" class="form-label">Business Name</label>
+      <input type="text" class="form-control" placeholder="Enter your Business Name" id="businessName"
+        name="businessName" />
     </div>
     <div class="col-md-6">
-      <label for="inputPassword4" class="form-label">City</label>
-      <input type="tel" class="form-control" placeholder="Enter your city" id="inputPassword4" required="" />
+      <label for="inputCity" class="form-label">City</label>
+      <input type="tel" class="form-control" placeholder="Enter your city" id="inputCity" name="inputCity" />
     </div>
-    <!-- <div class="col-12">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div> -->
     <div class="mb-3">
-      <label for="Message" class="form-label">Message</label>
-      <textarea class="form-control" placeholder="Enter your message here" id="Message" rows="6" required=""></textarea>
+      <label for="message" class="form-label">Message</label>
+      <textarea class="form-control" placeholder="Enter your message here" id="message" rows="6"
+        name="message"></textarea>
     </div>
     <div class="col-12 mb-3">
-      <button type="submit" class="btn">Send</button>
+      <button id="submit" type="submit" name="submit" class="btn">Submit</button>
+      <span class="form-message"></span>
+      <span id="error_message" class="text-danger"></span>
+      <span id="success_message" class="text-success"></span>
     </div>
   </form>
 </div>
 
 
+<script>
+  $(document).ready(function () {
+    $('#submit').click(function (e) {
+      e.preventDefault();
+      let firstName = $('#firstName').val();
+      let lastName = $('#lastName').val();
+      let inputEmail = $('#inputEmail').val();
+      let inputPhone = $('#inputPhone').val();
+      let businessName = $('#businessName').val();
+      let inputCity = $('#inputCity').val();
+      let message = $('#message').val();
+      let validEmail = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+      $("#firstName, #lastName, #inputEmail, #inputPhone, #businessName, #inputCity, #message").removeClass(
+        "input-error");
+      if (firstName == '' || lastName == '' || inputEmail == '' || inputPhone == '' ||
+        inputCity == '' || message == '') {
+        $("#firstName, #lastName, #inputEmail, #inputPhone, #businessName, #inputCity, #message").addClass(
+          "input-error");
+        $('#error_message').html("All Fields are required!");
+      } else if (!validEmail.test(inputEmail)) {
+        $("#inputEmail").addClass("input-error");
+        $('#error_message').html("Write a valid e-mail address!");
+      } else if (inputPhone.length != 10 || isNaN(inputPhone) == true) {
+        $("#inputPhone").addClass("input-error");
+        $('#error_message').html("Write a valid Phone Number!");
+      } else {
+        $('#error_message').html('');
+        $.ajax({
+
+          url: "admin/connect_partner.php",
+          method: "POST",
+          data: {
+            firstName: firstName,
+            lastName: lastName,
+            inputEmail: inputEmail,
+            inputPhone: inputPhone,
+            businessName: businessName,
+            inputCity: inputCity,
+            message: message
+          },
+          rules: {
+            inputEmail: {
+              required: true,
+            }
+          },
+          success: function (data) {
+            $("form").trigger("reset");
+            $('#success_message').fadeIn().html(data);
+            setTimeout(function () {
+              $('#success_message').fadeOut("Slow");
+            }, 4000);
+          }
+        });
+      }
+    });
+  });
+</script>
+
 <?php
+    include('includes/scripts.php');
     include('includes/footer.php');  
 ?>

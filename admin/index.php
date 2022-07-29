@@ -1,8 +1,9 @@
 <?php
+$pageName ='Dashboard';
+include('config/dbcon.php'); 
 include('includes/header.php'); 
 include('includes/navbar.php'); 
 ?>
-
 
 <!-- Begin Page Content -->
 <div class="container-fluid">
@@ -23,10 +24,10 @@ include('includes/navbar.php');
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Registered Admin</div>
+              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Registered Users</div>
               <div class="h5 mb-0 font-weight-bold text-gray-800">
 
-               <h4>Total Admin: *</h4>
+                <h4>Total Users: *</h4>
 
               </div>
             </div>
@@ -99,17 +100,10 @@ include('includes/navbar.php');
       </div>
     </div>
   </div>
+</div>
+<!-- Content Row -->
 
-  <!-- Content Row -->
-
-
-
-
-
-
-
-
-  <?php
+<?php
 include('includes/scripts.php');
 include('includes/footer.php');
 ?>

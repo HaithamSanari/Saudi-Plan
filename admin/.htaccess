@@ -1,0 +1,3 @@
+# This is 404 error page
+
+ErrorDocument 404 http://localhost/Graduation%20Project%20(2)/travel%20website/admin/404.php

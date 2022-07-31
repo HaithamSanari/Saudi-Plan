@@ -10,7 +10,13 @@
   <?php foreach($query as $q){?>
   <div class="box-container">
     <div class="package-header">
-      <img src="uploads/<?php echo $q["images"]?>" accept=".jpg, .jpeg, .png" alt="<?php echo $q["title"]?>"
+      <img src="uploads/<?php echo $q["image_1"]?>" accept=".jpg, .jpeg, .png" alt="<?php echo $q["title"]?>"
+        title="<?php echo $q["title"]?>">
+
+      <img src="uploads/<?php echo $q["image_2"]?>" accept=".jpg, .jpeg, .png" alt="<?php echo $q["title"]?>"
+        title="<?php echo $q["title"]?>">
+
+      <img src="uploads/<?php echo $q["image_3"]?>" accept=".jpg, .jpeg, .png" alt="<?php echo $q["title"]?>"
         title="<?php echo $q["title"]?>">
     </div>
     <div class="package-main">
@@ -207,6 +213,6 @@
 </script>
 
 <?php
-    include('includes/scripts.php');
-    include('includes/footer.php');  
+  include('includes/scripts.php');
+  include('includes/footer.php');  
 ?>

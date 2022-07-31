@@ -71,13 +71,40 @@ include('includes/navbar.php');
               <textarea id="myEditor" name='activities' cols='60' rows='10'><?php echo $q["activities"]?></textarea>
             </div>
           </div>
-          <div class="form-group">
+          <div class="form-group row px-3">
+            <div class="col-3">
+              <h4 class="card-title">Image 1</h4>
+              <input type="file" name="image_1" accept=".jpg,.jpeg,.png" />
+            </div>
+            <div class="col-3 ">
+              <h4 class="card-title">Image 2</h4>
+              <input type="file" name="image_2" accept=".jpg,.jpeg,.png" />
+            </div>
+            <div class="col-3">
+              <h4 class="card-title">Image 3</h4>
+              <input type="file" name="image_3" accept=".jpg,.jpeg,.png" />
+            </div>
             <div class="col-md-12">
-              <h4 class="card-title">Images</h4>
-              <input type="file" name="images" accept=".jpg,.jpeg,.png" />
-              <h5 class="card-title pt-4">Current Image</h5>
-              <input type="hidden" name="old_image" value="<?php echo $q["images"]?>">
-              <img src="../uploads/<?php echo $q["images"]?>" height="100px" width="100px" alt="<?php echo $q["title"]?>">
+              <div class="row">
+                <div class="col-3">
+                  <h5 class="card-title pt-4">Current Image 1</h5>
+                  <input type="hidden" name="old_image_1" value="<?php echo $q["image_1"]?>">
+                  <img src="../uploads/<?php echo $q["image_1"]?>" height="100px" width="100px"
+                    alt="<?php echo $q["title"]?>">
+                </div>
+                <div class="col-3">
+                  <h5 class="card-title pt-4">Current Image 2</h5>
+                  <input type="hidden" name="old_image_2" value="<?php echo $q["image_2"]?>">
+                  <img src="../uploads/<?php echo $q["image_2"]?>" height="100px" width="100px"
+                    alt="<?php echo $q["title"]?>">
+                </div>
+                <div class="col-3">
+                  <h5 class="card-title pt-4">Current Image 3</h5>
+                  <input type="hidden" name="old_image_3" value="<?php echo $q["image_3"]?>">
+                  <img src="../uploads/<?php echo $q["image_3"]?>" height="100px" width="100px"
+                    alt="<?php echo $q["title"]?>">
+                </div>
+              </div>
             </div>
           </div>
           <div class="pl-2">

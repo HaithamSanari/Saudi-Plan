@@ -50,7 +50,7 @@ include('includes/check_info.php');
               <td><?php echo $q["included"]?></td>
               <td><?php echo $q["activities"]?></td>
               <td>
-                <img src="../uploads/<?php echo $q["images"]?>" alt="<?php echo $q["title"]?>">
+                <img src="../uploads/<?php echo $q["image_1"]?>" alt="<?php echo $q["title"]?>">
               </td>
               <td>
                 <a href="edit_package.php?id=<?php echo $q['id']?>"><button type="button"

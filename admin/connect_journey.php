@@ -65,7 +65,7 @@ if(mysqli_query($conn, $sql)){
 
 <?php 
 
-// receive a new user Journey information
+// Request a new user Journey information
 if(isset($_REQUEST["submit"]))  
 {  
   $firstName = $_REQUEST["firstName"];  

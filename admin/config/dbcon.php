@@ -1,10 +1,12 @@
 <?php 
 
+
 $host = "localhost";
 $username = "root";
 $password = "";
 $database="saudiPlan";
 
+// Database connection
 $conn = mysqli_connect("$host","$username","$password","$database");
 
 if (!$conn) 

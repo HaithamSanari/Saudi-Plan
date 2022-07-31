@@ -68,10 +68,18 @@ include('includes/navbar.php');
               <textarea id="myEditor" name='activities' cols='60' rows='10'></textarea>
             </div>
           </div>
-          <div class="form-group">
-            <div class="col-md-12">
-              <h4 class="card-title">Images</h4>
-              <input type="file" name="images" accept=".jpg,.jpeg,.png" />
+          <div class="form-group row">
+            <div class="col-3 pl-4">
+              <h4 class="card-title">Image1</h4>
+              <input type="file" name="image_1" accept=".jpg,.jpeg,.png" />
+            </div>
+            <div class="col-32">
+              <h4 class="card-title">Image2</h4>
+              <input type="file" name="image_2" accept=".jpg,.jpeg,.png" />
+            </div>
+            <div class="col-3">
+              <h4 class="card-title">Image3</h4>
+              <input type="file" name="image_3" accept=".jpg,.jpeg,.png" />
             </div>
           </div>
           <div class="pl-2">

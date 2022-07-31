@@ -21,15 +21,15 @@ include('includes/navbar.php');
           <div class="form-group">
             <div class="col-md-12">
               <h4 class="card-title">First Name</h4>
-              <input type="text" placeholder="Enter First Name" class="form-control form-control-line"
-                name='firstName' value="<?php echo $q["firstName"]?>">
+              <input type="text" placeholder="Enter First Name" class="form-control form-control-line" name='firstName'
+                value="<?php echo $q["firstName"]?>">
             </div>
           </div>
           <div class="form-group">
             <div class="col-md-12">
               <h4 class="card-title">Last Name</h4>
-              <input type="text" placeholder="Enter Last Name" class="form-control form-control-line"
-                name='lastName' value="<?php echo $q["lastName"]?>">
+              <input type="text" placeholder="Enter Last Name" class="form-control form-control-line" name='lastName'
+                value="<?php echo $q["lastName"]?>">
             </div>
           </div>
           <div class="form-group">
@@ -63,8 +63,8 @@ include('includes/navbar.php');
           <div class="form-group">
             <div class="col-md-12">
               <h4 class="card-title">Message</h4>
-              <input type="text" placeholder="Enter Message" class="form-control form-control-line"
-                name='message' value="<?php echo $q["message"]?>">
+              <input type="text" placeholder="Enter Message" class="form-control form-control-line" name='message'
+                value="<?php echo $q["message"]?>">
             </div>
           </div>
           <div class="pl-2">

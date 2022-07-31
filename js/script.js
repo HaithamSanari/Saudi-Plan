@@ -1,13 +1,16 @@
+// menu toggle button
 let navbar = document.querySelector('.header .navbar')
 
 document.querySelector('#menu-btn').onclick = () => {
   navbar.classList.toggle('active')
+  console.log(1)
 }
 
 window.onscroll = () => {
   navbar.classList.remove('active')
 }
 
+// video button toggle
 document
   .querySelectorAll('.about .video-container .controls .control-btn')
   .forEach((btn) => {
@@ -17,6 +20,7 @@ document
     }
   })
 
+// Scroll to top 
 let btnScroll = document.querySelector('.scroll-top')
 window.onscroll = () => {
   if (window.scrollY >= 1000) {

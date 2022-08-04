@@ -1,10 +1,10 @@
 <?php
-    $pageName ='Saudi Plan';
-    $mainSection = 'Saudi Plan';
-    include('includes/header.php');  
-    include('includes/home.php'); 
-    include('admin/connect_package.php');  
-    include('admin/connect_blog.php'); 
+  $pageName ='Saudi Plan';
+  $mainSection = 'Saudi Plan';
+  include('includes/header.php');  
+  include('includes/home.php'); 
+  include('admin/connect_package.php');  
+  include('admin/connect_blog.php'); 
 ?>
 <!-- about section starts  -->
 
@@ -36,6 +36,8 @@
     <span>destination</span>
   </div>
   <div class="box-container">
+    
+    <!-- fetch package details -->
     <?php
       $query = mysqli_query($conn, "SELECT * FROM package_post ORDER BY id DESC limit 4")
     ?>
@@ -44,8 +46,8 @@
     <div class="box" data-aos="fade-up" data-aos-delay="150">
       <div class="image">
         <a href="package_content.php?id=<?php echo $q["id"]?>">
-          <img src="uploads/<?php echo $q["images"]?>" accept=".jpg, .jpeg, .png" alt=""
-            title="<?php echo $q["images"]?>" />
+          <img src="uploads/<?php echo $q["image_1"]?>" accept=".jpg, .jpeg, .png" alt=""
+            title="<?php echo $q["image_1"]?>" />
         </a>
       </div>
 
@@ -79,7 +81,7 @@
 <section class="services" dir="ltr" id="services">
   <div class="heading">
     <span>services</span>
-    <h1>countless expericences</h1>
+    <h1>countless experiences</h1>
   </div>
 
   <div class="box-container">
@@ -242,9 +244,11 @@
   </div>
   <div class="box-container">
 
+      <!-- fetch blog details -->
     <?php
       $query = mysqli_query($conn, "SELECT * FROM blog_post ORDER BY id DESC limit 3")
-      ?>
+    ?>
+
     <?php foreach($query as $q){?>
     <div class="box" data-aos="fade-up" data-aos-delay="150">
       <div class="image">

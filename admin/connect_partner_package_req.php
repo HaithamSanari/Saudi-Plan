@@ -4,13 +4,14 @@
 include('config/dbcon.php');
 
 // Get data to display on index page
-$sql = "SELECT * FROM package_post";
+$sql = "SELECT * FROM partner_req";
 $query = mysqli_query($conn, $sql);
 
 // Create a new Package
 if(isset($_REQUEST["registerBtn"]))  
 {  
   $posted_by = $_REQUEST["posted_by"];  
+  $request = $_REQUEST["request"];
   $title = $_REQUEST["title"];  
   
   $city = $_REQUEST["city"];  
@@ -29,18 +30,15 @@ if(isset($_REQUEST["registerBtn"]))
 
   // path of uploaded image
   $path = '../uploads';
-
-  // $image_ext = pathinfo($images, PATHINFO_EXTENSION);
-  // $filename = time(). '.' .$image_ext;
   
-  $sql = "INSERT INTO package_post (posted_by,title,city,days,price,overview,included,activities,image_1,image_2,image_3) VALUES ('$posted_by','$title','$city','$days','$price','$overview','$included','$activities','$image_1','$image_2','$image_3')"; 
+  $sql = "INSERT INTO partner_req (posted_by,request,title,city,days,price,overview,included,activities,image_1,image_2,image_3) VALUES ('$posted_by','$request','$title','$city','$days','$price','$overview','$included','$activities','$image_1','$image_2','$image_3')"; 
 
   // Upload the new image to folder `uploads`
   if(mysqli_query($conn, $sql)){
     move_uploaded_file($_FILES["image_1"]['tmp_name'], $path. '/' .$image_1);
     move_uploaded_file($_FILES["image_2"]['tmp_name'], $path. '/' .$image_2);
     move_uploaded_file($_FILES["image_3"]['tmp_name'], $path. '/' .$image_3);
-    header("Location: packages.php?info=added");
+    header("Location: view_partner_req.php?info=added");
     exit();
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
@@ -52,7 +50,7 @@ mysqli_close($conn);
 // Get Package data based on id
 if(isset($_REQUEST['id'])){
   $id = $_REQUEST['id'];
-  $sql = "SELECT * FROM package_post WHERE id = $id";
+  $sql = "SELECT * FROM partner_req WHERE id = $id";
   $query = mysqli_query($conn, $sql);
 }
 
@@ -60,11 +58,11 @@ if(isset($_REQUEST['id'])){
 if(isset($_REQUEST['delete'])){
   $id = $_REQUEST['id'];
   
-  $sql = "DELETE FROM package_post WHERE id = $id";
+  $sql = "DELETE FROM partner_req WHERE id = $id";
   // mysqli_query($conn, $sql);
   
   if(mysqli_query($conn, $sql)){
-    header("Location: packages.php?info=deleted");
+    header("Location: view_partner_req.php?info=deleted");
     exit();
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
@@ -78,6 +76,7 @@ if(isset($_REQUEST['update'])){
   $id = $_REQUEST['id'];
 
   $posted_by = $_REQUEST["posted_by"];  
+  $request = $_REQUEST["request"];
   $title = $_REQUEST["title"];  
   
   $city = $_REQUEST["city"];  
@@ -128,7 +127,7 @@ if(isset($_REQUEST['update'])){
   // Update the image in folder 'uploads' 
   $path = '../uploads';
   
-  $sql = "UPDATE package_post SET posted_by = '$posted_by', title = '$title', city = '$city', days = '$days', price = '$price', overview = '$overview', included = '$included', activities = '$activities', image_1 = '$update_filename_1', image_2 = '$update_filename_2', image_3 = '$update_filename_3' WHERE id = $id";
+  $sql = "UPDATE partner_req SET posted_by = '$posted_by', request = '$request' , title = '$title', city = '$city', days = '$days', price = '$price', overview = '$overview', included = '$included', activities = '$activities', image_1 = '$update_filename_1', image_2 = '$update_filename_2', image_3 = '$update_filename_3' WHERE id = $id";
 
 if(mysqli_query($conn, $sql)){
   
@@ -150,7 +149,7 @@ if(mysqli_query($conn, $sql)){
       unlink("../uploads".$old_image_3);
     }
   }
-  header("Location: packages.php?info=updated");
+  header("Location: view_partner_req.php?info=updated");
   exit();
 } else{
   echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);

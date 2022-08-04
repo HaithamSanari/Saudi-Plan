@@ -1,5 +1,6 @@
 <?php
 $pageName ='404 Page';
+include('security.php');
 include('config/dbcon.php'); 
 include('includes/header.php'); 
 include('includes/navbar_partner.php'); 

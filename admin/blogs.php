@@ -1,5 +1,6 @@
 <?php
 $pageName ='Blogs';
+include('security.php');
 include('connect_blog.php');
 include('config/dbcon.php'); 
 include('includes/header.php'); 

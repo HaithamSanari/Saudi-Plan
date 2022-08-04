@@ -7,6 +7,10 @@
 ?>
 
 <!-- user request journey form -->
+<div class="partner-content container " data-aos="fade-right" data-aos-delay="350">
+  <h2>Create your own Journey !</h2>
+  <p>Create a fully customized daily tourist destination and discover the hidden gems of Saudi Arabia , Choose your trip date and local attractions Which you want to visit to plan your trip very easy !</p>
+</div>
 <div data-aos="fade-left" data-aos-delay="450"
   class="d-flex justify-content-center align-items-center   aos-init aos-animate">
   <form class="row g-3 container partner" action="admin/connect_journey.php" method="POST">

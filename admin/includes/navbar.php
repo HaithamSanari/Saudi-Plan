@@ -85,7 +85,14 @@
             d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z" />
           <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
         </svg>
-        <span class ="pl-1">Users</span></a>
+        <span class="pl-1">Users</span></a>
+    </li>
+    <!-- Partner  Request -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="partner_req.php">
+        <i class="fas fa-fw fa-cog"></i>
+        <span>Partner Request</span>
+      </a>
     </li>
 
     <!-- Partner Register -->
@@ -319,9 +326,7 @@
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
               <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-
-                ADMIN
-
+                <?php echo $_SESSION['username']; ?>
               </span>
               <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
             </a>

@@ -14,7 +14,9 @@
 <!-- Page level custom scripts -->
 <script src="js/demo/chart-area-demo.js"></script>
 <script src="js/demo/chart-pie-demo.js"></script>
-<script>
+
+<!-- tinymce library script -->
+<!-- <script>
     tinymce.init({
         selector: 'textarea',
         plugins: 'a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker',
@@ -23,45 +25,11 @@
         tinycomments_mode: 'embedded',
         tinycomments_author: 'Author name',
     });
+</script> -->
+<script>
+    tinymce.init({
+        selector: 'textarea',
+        plugins: 'advlist autolink lists link image charmap preview anchor pagebreak',
+        toolbar_mode: 'floating',
+    });
 </script>
-
-<?php
-
-
-include('config/dbcon.php');
-
-if(isset($_POST['registerbtn']))
-{
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $confirm_password = $_POST['confirmpassword'];
-
-    if($password === $confirm_password)
-    {
-        $query = "INSERT INTO register (username,email,password) VALUES ('$username','$email','$password')";
-        $query_run = mysqli_query($connection, $query);
-    
-        if($query_run)
-        {
-            echo "done";
-            $_SESSION['success'] =  "Admin is Added Successfully";
-            header('Location: register.php');
-        }
-        else 
-        {
-            echo "not done";
-            $_SESSION['status'] =  "Admin is Not Added";
-            header('Location: register.php');
-        }
-    }
-    else 
-    {
-        echo "pass no match";
-        $_SESSION['status'] =  "Password and Confirm Password Does not Match";
-        header('Location: register.php');
-    }
-
-}
-
-?>

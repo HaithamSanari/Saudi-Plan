@@ -3,9 +3,8 @@ $pageName ='Packages';
 include('security.php');
 include('config/dbcon.php'); 
 include('includes/header.php'); 
-include('includes/navbar.php'); 
+include('includes/navbar_partner.php'); 
 include('connect_package.php'); 
-include('includes/check_info.php');
 ?>
 
 <div class="container-fluid">
@@ -28,8 +27,6 @@ include('includes/check_info.php');
               <th scope="col">Included</th>
               <th scope="col">Activities</th>
               <th scope="col">Image</th>
-              <th scope="col">Edit</th>
-              <th scope="col">Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -52,18 +49,6 @@ include('includes/check_info.php');
               <td><?php echo $q["activities"]?></td>
               <td>
                 <img src="../uploads/<?php echo $q["image_1"]?>" alt="<?php echo $q["title"]?>">
-              </td>
-              <td>
-                <a href="edit_package.php?id=<?php echo $q['id']?>"><button type="button"
-                    class="btn btn-primary btn-xs btn-addon s-b-10 s-l-5"><i class="fa fa-edit"></i></button></a>
-              </td>
-              <td>
-                <form action="connect_package.php" method="POST">
-                  <input type="text" hidden name="id" value="<?php echo $q["id"]?>">
-                  <button type="submit" class="btn btn-danger btn-xs btn-addon s-b-10 s-l-5" name="delete"><i
-                      class="fa fa-trash"></i>
-                  </button>
-                </form>
               </td>
             </tr>
             <?php }?>

@@ -31,16 +31,23 @@
 
     <!-- Partner View Packages -->
     <li class="nav-item">
-      <a class="nav-link collapsed" href="journey_register.php">
+      <a class="nav-link collapsed" href="view_partner_package.php">
         <i class="fas fa-fw fa-cog"></i>
         <span>View Packages</span>
       </a>
     </li>
-    <!-- Partner Request Package -->
+    <!-- Partner view Request -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="view_partner_req.php">
+        <i class="fas fa-fw fa-cog"></i>
+        <span>View Request</span>
+      </a>
+    </li>
+    <!-- Partner new Request  -->
     <li class="nav-item">
       <a class="nav-link collapsed" href="new_partner_package_req.php">
         <i class="fas fa-fw fa-cog"></i>
-        <span>Request Package</span>
+        <span>New Request</span>
       </a>
     </li>
 
@@ -256,7 +263,9 @@
               aria-haspopup="true" aria-expanded="false">
               <span class="mr-2 d-none d-lg-inline text-gray-600 small">
 
-                ADMIN
+                <?php 
+                echo $_SESSION['username'];
+                ?>
 
               </span>
               <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">

@@ -1,8 +1,9 @@
 <?php
 $pageName ='Dashboard';
-include('config/dbcon.php'); 
+include('security.php');
 include('includes/header.php'); 
-include('includes/navbar.php'); 
+include('includes/navbar.php');
+include('config/dbcon.php');
 ?>
 
 <!-- Begin Page Content -->
@@ -26,8 +27,15 @@ include('includes/navbar.php');
             <div class="col mr-2">
               <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Registered Users</div>
               <div class="h5 mb-0 font-weight-bold text-gray-800">
+                <?php
+                $query = "SELECT id FROM register  ORDER BY id ";
+                $query_run = mysqli_query($conn, $query) ;
 
-                <h4>Total Users: *</h4>
+                $row = mysqli_num_rows( $query_run);
+
+                echo '<h1>'  . $row.  '</h1>';
+              ?>
+                <h4></h4>
 
               </div>
             </div>

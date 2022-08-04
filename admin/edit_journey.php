@@ -1,5 +1,6 @@
 <?php
 $pageName ='Update Package';
+include('security.php');
 include('config/dbcon.php'); 
 include('connect_journey.php');  
 include('includes/header.php'); 

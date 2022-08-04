@@ -4,8 +4,8 @@
   <div class="box-container ">
     <div class="box" data-aos="fade-up" data-aos-delay="150">
       <a href="index.php" class="logo">saudi | Plan</a>
-
       <p></p>
+      <!-- social links -->
       <div class="share">
         <a href="https://www.facebook.com/" target="_blank" class="fab fa-facebook-f"></a>
         <a href="https://twitter.com/?lang=ar" target="_blank" class="fab fa-twitter"></a>
@@ -13,13 +13,12 @@
       </div>
     </div>
 
+    <!-- quick links -->
     <div class="box" data-aos="fade-up" data-aos-delay="300">
       <h3>quick links</h3>
       <a href="index.php#home" class="links">
         <i class="fas fa-arrow-right"></i> home
       </a>
-      <!-- <a href="#about" class="links"> <i class="fas fa-arrow-right"></i> about </a> -->
-      <!-- <a href="index2.html" class="links"> <i class="fas fa-arrow-right"></i> Special Offers </a> -->
       <a href="index.php#services" class="links">
         <i class="fas fa-arrow-right"></i> services
       </a>
@@ -33,6 +32,7 @@
       </a>
     </div>
 
+    <!-- contact section -->
     <div class="box" data-aos="fade-up" data-aos-delay="450">
       <h3>contact info</h3>
       <p><i class="fas fa-map"></i> Saudi Arabia</p>
@@ -56,6 +56,7 @@
 </div>
 
 <!-- footer section ends -->
+
 <!-- Scroll to top -->
 <div class="btn scroll-top">
   <span>Up</span>

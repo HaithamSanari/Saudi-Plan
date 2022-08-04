@@ -1,5 +1,6 @@
 <?php
 $pageName ='Plan your Journey';
+include('security.php');
 include('config/dbcon.php'); 
 include('includes/header.php'); 
 include('includes/navbar.php'); 

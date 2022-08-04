@@ -1,29 +1,36 @@
 <?php
-$pageName ='Update Package';
+$pageName ='Update Request';
 include('security.php');
+include('connect_partner_package_req.php'); 
 include('config/dbcon.php'); 
-include('connect_package.php'); 
 include('includes/header.php'); 
-include('includes/navbar.php'); 
+include('includes/navbar_partner.php'); 
 ?>
 
+<!--update request-->
 <div class="card-body">
   <div class="container-fluid">
     <div class="card shadow mb-4">
       <div class="card-header py-3">
-        <h5 class="m-0 font-weight-bold text-primary">Update Package
+        <h5 class="m-0 font-weight-bold text-primary">Update Request
         </h5>
       </div>
       <div class="py-3">
-        <!-- fetch and update package content -->
         <?php foreach($query as $q){ ?>
-        <form action="connect_package.php" method="POST" enctype="multipart/form-data">
+        <form action="connect_partner_package_req.php" method="POST" enctype="multipart/form-data">
           <input type="text" hidden value='<?php echo $q['id']?>' name="id">
           <div class="form-group">
             <div class="col-md-12">
               <h4 class="card-title">Posted By</h4>
               <input type="text" placeholder="Enter Package Owner" class="form-control form-control-line"
                 name='posted_by' value="<?php echo $q["posted_by"]?>">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-12">
+              <h4 class="card-title">Request</h4>
+              <input type="text" placeholder="Enter Your Request [ Add or Update or Delete ]" class="form-control form-control-line"
+                name='request' value="<?php echo $q["request"]?>">
             </div>
           </div>
           <div class="form-group">
@@ -106,10 +113,8 @@ include('includes/navbar.php');
                     alt="<?php echo $q["title"]?>">
                 </div>
               </div>
-            </div>
-          </div>
           <div class="pl-2">
-            <button type="submit" name="update" class="btn btn-primary">Update Package</button>
+            <button type="submit" name="update" class="btn btn-primary">Update Request</button>
           </div>
         </form>
         <?php } ?>

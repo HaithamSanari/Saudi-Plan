@@ -1,5 +1,6 @@
 <?php
 $pageName ='Update Blog Post';
+include('security.php');
 include('config/dbcon.php'); 
 include('connect_blog.php'); 
 include('includes/header.php'); 

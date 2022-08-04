@@ -5,9 +5,8 @@
   include('includes/home.php');
   include('admin/connect_blog.php'); 
   ?>
+
 <!-- blogs section starts  -->
-
-
 <section class="blogs" id="blogs">
   <div class="heading">
     <span>blogs & posts</span>

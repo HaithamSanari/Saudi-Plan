@@ -70,7 +70,7 @@
           <h6 class="collapse-header">Package Posts</h6>
           <a class="collapse-item" href="packages.php">View Packages</a>
           <a class="collapse-item" href="new_package.php">Add Package</a>
-          <a class="collapse-item" href="req_package.php">requested Package</a>
+          <a class="collapse-item" href="req_package.php">Requested Package</a>
         </div>
       </div>
     </li>

@@ -1,8 +1,8 @@
 <?php
   $pageName ='Package info';
-  include('includes/header.php'); 
-  include('admin/connect_req_package.php'); 
-  include('admin/connect_package.php'); 
+  include('includes/header.php');
+  include('admin/connect_req_package.php');
+  include('admin/connect_package.php');
 ?>
 
 <section class="package-content">
@@ -184,7 +184,7 @@
 
 <script>
   $(document).ready(function () {
-    // form validation 
+    // form validation
     $('#submit').click(function (e) {
       e.preventDefault();
       let submit = $('#submit').val();
@@ -241,5 +241,5 @@
 
 <?php
   include('includes/scripts.php');
-  include('includes/footer.php');  
+  include('includes/footer.php');
 ?>

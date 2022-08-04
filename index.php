@@ -1,10 +1,10 @@
 <?php
   $pageName ='Saudi Plan';
   $mainSection = 'Saudi Plan';
-  include('includes/header.php');  
-  include('includes/home.php'); 
-  include('admin/connect_package.php');  
-  include('admin/connect_blog.php'); 
+  include('includes/header.php');
+  include('includes/home.php');
+  include('admin/connect_package.php');
+  include('admin/connect_blog.php');
 ?>
 <!-- about section starts  -->
 
@@ -36,7 +36,7 @@
     <span>destination</span>
   </div>
   <div class="box-container">
-    
+
     <!-- fetch package details -->
     <?php
       $query = mysqli_query($conn, "SELECT * FROM package_post ORDER BY id DESC limit 4")
@@ -289,5 +289,5 @@
 <!-- banner section ends -->
 <?php
     include('includes/scripts.php');
-    include('includes/footer.php');  
+    include('includes/footer.php');
 ?>

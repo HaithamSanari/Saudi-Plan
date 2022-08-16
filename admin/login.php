@@ -31,15 +31,20 @@ include('includes/header.php');
                 <form class="user" action="connect_login.php" method="POST">
 
                   <div class="form-group">
-                    <input type="email" name="email" class="form-control form-control-user"
+                    <input id="email" type="email" name="email" class="form-control form-control-user"
                       placeholder="Enter Email Address...">
                   </div>
                   <div class="form-group">
-                    <input type="password" name="password" class="form-control form-control-user"
+                    <input id="pass" type="password" name="password" class="form-control form-control-user"
                       placeholder="Password">
                   </div>
 
                   <button type="submit" name="login_btn" class="btn btn-primary btn-user btn-block"> Login </button>
+                  <button id="demo_login" type="submit" onClick="adminLogin()" name="test_btn"
+                    class="btn btn-primary btn-user btn-block"> Admin Login demo </button>
+                  <button id="demo_login" type="submit" onClick="partnerLogin()" name="test_btn"
+                    class="btn btn-primary btn-user btn-block"> Partner Login demo </button>
+                  <!-- <a href="index.php" class="btn btn-primary btn-user btn-block">Login demo </a> -->
                   <hr>
                 </form>
 
@@ -55,6 +60,23 @@ include('includes/header.php');
 
 </div>
 
+<script>
+  let demo = document.getElementById('#demo_login');
+  let email = document.getElementById('email');
+  let pass = document.getElementById('pass');
+
+  function adminLogin() {
+    email.setAttribute("value", "AdminDemo@demo.com");
+    pass.setAttribute("value", "222");
+    // console.log(1);
+  }
+
+  function partnerLogin() {
+    email.setAttribute("value", "PartnerDemo@demo.com");
+    pass.setAttribute("value", "44444");
+    // console.log(1);
+  }
+</script>
 
 <?php
 include('includes/scripts.php'); 

@@ -75,7 +75,7 @@
       </div>
 
       <!-- home section -->
-      <a data-aos="zoom-in-left" data-aos-delay="1300" href="package.php" class="btn"><?php echo $lang['bookNow'] ?></a>
+      <a data-aos="zoom-in-left" data-aos-delay="1300" href="admin/login.php" class="btn"><?php echo $lang['login'] ?></a>
     </div>
   </header>
 

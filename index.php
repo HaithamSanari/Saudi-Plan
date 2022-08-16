@@ -30,7 +30,7 @@
 <!-- about section ends -->
 <!-- destination section starts  -->
 
-<section class="destination" id="destination">
+<section class="destination" id="destination" dir="ltr">
 
   <div class="heading">
     <span>destination</span>

@@ -14,7 +14,7 @@ include('includes/header.php');
     <p class="text-gray-500 mb-0">
       It looks like you found a glitch in the matrix...
     </p>
-    <a href="index.php">&larr; Back to Dashboard</a>
+    <a href="partner_dashboard.php">&larr; Back to Dashboard</a>
   </div>
 </div>
 <!-- /.container-fluid -->

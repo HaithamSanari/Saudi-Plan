@@ -9,7 +9,8 @@
 <!-- user request journey form -->
 <div class="partner-content container " data-aos="fade-right" data-aos-delay="350">
   <h2>Create your own Journey !</h2>
-  <p>Create a fully customized daily tourist destination and discover the hidden gems of Saudi Arabia , Choose your trip date and local attractions Which you want to visit to plan your trip very easy !</p>
+  <p>Create a fully customized daily tourist destination and discover the hidden gems of Saudi Arabia , Choose your trip
+    date and local attractions Which you want to visit to plan your trip very easy !</p>
 </div>
 <div data-aos="fade-left" data-aos-delay="450"
   class="d-flex justify-content-center align-items-center   aos-init aos-animate">
@@ -79,6 +80,7 @@
       let inputCity = $('#inputCity').val();
       let inputNumberOfGuests = $('#inputNumberOfGuests').val();
       let message = $('#message').val();
+      let validName = /[a-z]/;
       let validEmail = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
       $("#firstName, #lastName, #inputEmail, #inputPhone, #inputArrival, #inputDeparture, #inputCity,#inputNumberOfGuests,#message")
         .removeClass(
@@ -89,6 +91,16 @@
           .addClass(
             "input-error");
         $('#error_message').html("All Fields are required!");
+      } else if (!validName.test(firstName) || !validName.test(lastName)) {
+        if (!validName.test(firstName)) {
+          $("#firstName").addClass("input-error");
+          $('#error_message').html("Write a valid Name!");
+        }
+
+        if (!validName.test(lastName)) {
+          $("#lastName").addClass("input-error");
+          $('#error_message').html("Write a valid Name!");
+        }
       } else if (!validEmail.test(inputEmail)) {
         $("#inputEmail").addClass("input-error");
         $('#error_message').html("Write a valid e-mail address!");

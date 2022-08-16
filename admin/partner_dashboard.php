@@ -1,9 +1,9 @@
 <?php
 $pageName ='Dashboard';
 include('security.php');
-include('includes/header.php'); 
-include('includes/navbar.php');
 include('config/dbcon.php');
+include('includes/header.php'); 
+include('includes/navbar_partner.php');
 ?>
 
 <!-- Begin Page Content -->
@@ -19,41 +19,13 @@ include('config/dbcon.php');
   <!-- Content Row -->
   <div class="row">
 
-    <!-- Total Users -->
+    <!-- Earnings (Monthly) Card Example -->
     <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-left-primary shadow h-100 py-2">
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Registered Users</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">
-                <?php
-                $query = "SELECT id FROM register  ORDER BY id ";
-                $query_run = mysqli_query($conn, $query) ;
-
-                $row = mysqli_num_rows( $query_run);
-
-                echo '<h1>'  . $row.  '</h1>';
-              ?>
-                <h4></h4>
-
-              </div>
-            </div>
-            <div class="col-auto">
-              <i class="fas fa-calendar fa-2x text-gray-300"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Total Request -->
-    <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-left-primary shadow h-100 py-2">
-        <div class="card-body">
-          <div class="row no-gutters align-items-center">
-            <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Request</div>
+              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Registered Request</div>
               <div class="h5 mb-0 font-weight-bold text-gray-800">
                 <?php
                 $query = "SELECT id FROM partner_req  ORDER BY id ";
@@ -68,7 +40,7 @@ include('config/dbcon.php');
               </div>
             </div>
             <div class="col-auto">
-              <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+              <i class="fas fa-calendar fa-2x text-gray-300"></i>
             </div>
           </div>
         </div>
@@ -101,11 +73,11 @@ include('config/dbcon.php');
               <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks</div>
               <div class="row no-gutters align-items-center">
                 <div class="col-auto">
-                  <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                  <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">30%</div>
                 </div>
                 <div class="col">
                   <div class="progress progress-sm mr-2">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50"
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 30%" aria-valuenow="30"
                       aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
@@ -126,7 +98,7 @@ include('config/dbcon.php');
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
               <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Pending Requests</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">5</div>
             </div>
             <div class="col-auto">
               <i class="fas fa-comments fa-2x text-gray-300"></i>

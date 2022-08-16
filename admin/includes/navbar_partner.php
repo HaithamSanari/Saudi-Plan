@@ -2,7 +2,7 @@
   <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="partner_dashboard.php">
       <div class="sidebar-brand-icon rotate-n-15">
 
       </div>
@@ -14,7 +14,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-      <a class="nav-link" href="index.php">
+      <a class="nav-link" href="partner_dashboard.php">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Dashboard</span></a>
     </li>
@@ -72,8 +72,8 @@
           <a class="collapse-item" href="login.php">Login</a>
           <div class="collapse-divider"></div>
           <h6 class="collapse-header">Other Pages:</h6>
-          <a class="collapse-item" href="404.php">404 Page</a>
-          <a class="collapse-item" href="blank.php">Blank Page</a>
+          <a class="collapse-item" href="404_partner.php">404 Page</a>
+          <a class="collapse-item" href="blank_partner.php">Blank Page</a>
         </div>
       </div>
     </li>
@@ -118,6 +118,12 @@
 
         <!-- Topbar Navbar -->
         <ul class="navbar-nav ml-auto">
+
+          <li>
+            <button type="button" class="btn btn-secondary p-0 my-3 btn-sm"><a href=".././index.php"
+                class="btn btn-secondary btn-sm">Go to the Website</a>
+            </button>
+          </li>
 
           <!-- Nav Item - Search Dropdown (Visible Only XS) -->
           <li class="nav-item dropdown no-arrow d-sm-none">

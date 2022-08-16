@@ -10,8 +10,11 @@ include('includes/check_info.php');
 
 <div class="container-fluid">
   <div class="card shadow mb-4">
-    <div class="card-header py-3">
+    <div class="card-header py-3 py-3 d-flex justify-content-between align-items-center">
       <h5 class="m-0 font-weight-bold text-primary">Blog Posts</h5>
+      <button type="button" class="btn btn-success p-0  btn-sm">
+        <a href=".././blog.php#blogs" class="btn btn-success btn-sm">See Changes in Website</a>
+      </button>
     </div>
     <div class="card-body">
       <div class="table-responsive">

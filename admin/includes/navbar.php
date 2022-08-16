@@ -183,6 +183,10 @@
         <!-- Topbar Navbar -->
         <ul class="navbar-nav ml-auto">
 
+          <li>
+            <button type="button" class="btn btn-secondary p-0 my-3 btn-sm"><a href=".././index.php" class="btn btn-secondary btn-sm">Go to the Website</a></button>
+          </li>
+
           <!-- Nav Item - Search Dropdown (Visible Only XS) -->
           <li class="nav-item dropdown no-arrow d-sm-none">
             <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
@@ -205,6 +209,7 @@
               </form>
             </div>
           </li>
+
 
           <!-- Nav Item - Alerts -->
           <li class="nav-item dropdown no-arrow mx-1">

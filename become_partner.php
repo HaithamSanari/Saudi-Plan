@@ -84,6 +84,7 @@
       let businessName = $('#businessName').val();
       let inputCity = $('#inputCity').val();
       let message = $('#message').val();
+      let validName = /[a-z]/;
       let validEmail = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
       $("#firstName, #lastName, #inputEmail, #inputPhone, #businessName, #inputCity, #message").removeClass(
         "input-error");
@@ -92,6 +93,16 @@
         $("#firstName, #lastName, #inputEmail, #inputPhone, #businessName, #inputCity, #message").addClass(
           "input-error");
         $('#error_message').html("All Fields are required!");
+      } else if (!validName.test(firstName) || !validName.test(lastName)) {
+        if (!validName.test(firstName)) {
+          $("#firstName").addClass("input-error");
+          $('#error_message').html("Write a valid Name!");
+        }
+
+        if (!validName.test(lastName)) {
+          $("#lastName").addClass("input-error");
+          $('#error_message').html("Write a valid Name!");
+        }
       } else if (!validEmail.test(inputEmail)) {
         $("#inputEmail").addClass("input-error");
         $('#error_message').html("Write a valid e-mail address!");

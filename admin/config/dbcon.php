@@ -1,10 +1,10 @@
 <?php 
 
 
-$host = "localhost";
-$username = "root";
-$password = "";
-$database="saudiPlan";
+$host = "us-cdbr-east-06.cleardb.net";
+$username = "bccc019caa0dc7";
+$password = "0b2df797";
+$database="heroku_222156371dfad1a";
 
 // Database connection
 $conn = mysqli_connect("$host","$username","$password","$database");

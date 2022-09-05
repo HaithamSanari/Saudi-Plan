@@ -1,10 +1,7 @@
 <?php 
+
   // Database connection
-  $conn = mysqli_connect("localhost", "root", "", "saudiplan");  
-  if(!$conn){
-    header("Location:../errors/dberror.php");
-    die();
-  }
+  include('config/dbcon.php'); 
 
   // Get data to display on index page
   $sql = "SELECT * FROM partner_req";

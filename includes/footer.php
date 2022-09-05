@@ -8,7 +8,7 @@
       <!-- social links -->
       <div class="share">
         <a href="https://www.facebook.com/" target="_blank" class="fab fa-facebook-f"></a>
-        <a href="https://twitter.com/?lang=ar" target="_blank" class="fab fa-twitter"></a>
+        <a href="https://twitter.com" target="_blank" class="fab fa-twitter"></a>
         <a href="https://www.instagram.com/" target="_blank" class="fab fa-instagram"></a>
       </div>
     </div>
